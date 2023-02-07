@@ -17,3 +17,20 @@ int main(){
 	
 	return 0;
 }
+void shuffle(int &w,int &x,int &y,int &z){
+	int fong[4]={w,x,y,z};
+	int jai[4] = {0,0,0,0};
+	for(int i=0;i<4;i++){
+		jai[i] = rand()%4;
+		for(int j = 0;j<i;j++){
+			if(jai[i] == jai[j]){
+				i--;
+				break;
+			}
+		}
+	}
+	w = fong[jai[0]];
+	x = fong[jai[1]];
+	y = fong[jai[2]];
+	z = fong[jai[3]];
+}
